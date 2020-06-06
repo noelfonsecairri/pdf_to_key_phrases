@@ -117,7 +117,7 @@ for item in bucket_items:
 						if item['BlockType'] == 'LINE':
 							f.write(item['Text'] + '\n')
 				s3_client.upload_file(file_name, s3_output_bucket, file_name)
-			os.remove(file_name)
+			# os.remove(file_name)
 	except FileNotFoundError as error:
 		print(error)
 		print('There was an error')

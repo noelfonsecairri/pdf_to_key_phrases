@@ -9,7 +9,10 @@ result = rclone.with_config(cfg).listremotes()
 
 #print(result)
 
-# Google drive to S3
+#COPY Google drive to S3
+rclone.with_config(cfg).run_cmd(command='copy', extra_args=["-v", "--ignore-checksum", "mygoogledrive1:/", "mys3_1:/noelbeerbucket"])
+
+#SYNC Google drive to S3
 # rclone.with_config(cfg).run_cmd(command='sync', extra_args=["-v", "--ignore-checksum", "mygoogledrive1:/", "mys3_1:/noelbeerbucket"])
 
 # S3 to Google Drive
